@@ -1,0 +1,15 @@
+img{
+  
+    width: 20vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height:30vh;
+}
+
+ngb-carousel{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background:linear-gradient(rgba(112, 158, 130, 0.6),rgba(110, 147, 156, 0.6)), url("/assets/img/fondo.jpg");
+}
+

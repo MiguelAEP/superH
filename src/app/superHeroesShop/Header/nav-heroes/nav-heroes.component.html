@@ -1,0 +1,74 @@
+<nav>
+    
+<ul class="nav justify-content-center">
+    <a routerLink="inicio" class="nav-link">Inicio</a>
+    
+    <li class="nav-item pr-5">
+        <a  class="nav-link">Figuras</a>
+        <ul class="nav flex-column">
+            <li class="nav-item" *ngFor="let elementos of figuras ; let i = index">
+        <a [routerLink]="['figuras',elementos.nombre]" >{{elementos.nombre}}</a>
+        </li>
+            
+        </ul>
+    </li>
+
+    <li class="nav-item pr-5">
+        <a  class="nav-link">Lego</a>
+        <ul class="nav flex-column">
+            <li class="nav-item" *ngFor="let elementos of lego">
+                <a [routerLink]="['lego',elementos.nombre]">{{elementos.nombre}}</a>
+            </li>
+           
+        </ul>
+    </li>
+
+    <li class="nav-item pr-5">
+        <a  class="nav-link">Ropa</a>
+        <ul class="nav flex-column">
+            <li class="nav-item" *ngFor="let elementos of ropa">
+                <a [routerLink]="['ropa',elementos.nombre]" >{{elementos.nombre}}</a>
+            </li>
+           
+        </ul>
+    </li>
+
+    <li class="nav-item pr-5">
+        <a class="nav-link">Disfraces</a>
+        <ul class="nav flex-column">
+            <li class="nav-item" *ngFor="let elementos of disfraces">
+                <a [routerLink]="['disfraces',elementos.nombre]" >{{elementos.nombre}}</a>
+            </li>
+        </ul>
+    </li>
+
+    <div class="card">
+        <a (click)="open()" class="nav-link">registrarte</a>
+
+        <form  (ngSubmit)="registrar()" 
+        [formGroup]="miFormulario" *ngIf="opening">
+
+            <label for="">correo</label>
+            <input class="form-control"
+            type="text"
+            placeholder="Ingrese correo"
+            formControlName="email"
+            >
+            <span class="text-danger" *ngIf="validado('email')">ingrese bien el correo</span>
+            <label for="">password</label>
+            <input class="form-control" type="password"
+            placeholder="Ingrese password"
+            formControlName="password">
+
+            <button [disabled]="miFormulario.invalid"
+            class="btn btn-primary" 
+            type="submit">
+            registrar
+        </button>
+        </form>
+    </div>
+
+</ul>
+
+</nav>
+

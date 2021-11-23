@@ -1,0 +1,10 @@
+h2{
+    color: rgb(129, 145, 124);
+}
+img{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height:50px;
+    border-radius: 50%;
+}
